@@ -3,8 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{0A2AF028-05E9-4FF5-90A1-11D44E80F5C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{C8338451-A2E4-4B67-A5A7-5B982E0052D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{3DE5E24D-7EC7-48D7-A142-E9271922A6F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Protal", "Blog.Protal\Blog.Protal.csproj", "{DADF9809-26B3-4363-9E42-3C3B392C086D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DADF9809-26B3-4363-9E42-3C3B392C086D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADF9809-26B3-4363-9E42-3C3B392C086D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADF9809-26B3-4363-9E42-3C3B392C086D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADF9809-26B3-4363-9E42-3C3B392C086D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DADF9809-26B3-4363-9E42-3C3B392C086D} = {3DE5E24D-7EC7-48D7-A142-E9271922A6F4}
 	EndGlobalSection
 EndGlobal
