@@ -46,8 +46,20 @@
                         logger.logInfo("Remove user info.");
                     }
                 }
-                userService.login(vm.userInfo);
-                $state.go('index');
+                userService.login(vm.userInfo).then(function(data) {
+                    if (data) {
+                        if (DEBUG) {
+                            console.log('loged in user', data);
+                        }
+                        $cookies.put('loginUser', JSON.stringify(data));
+                        logger.logSuccess(data.UserName + ' Logined In.');
+                        $state.go('index');
+                    } else {
+                        logger.logError("Email or password is incorrect.");
+                    }
+                }, function(reason) {
+                    logger.logError("Post to server Error.");
+                });
             }
         }        
     }

@@ -18,9 +18,11 @@
     <link rel="stylesheet" type="text/css" href="/app/styles/style.css" />
     
     <!-- Custom Fonts -->
+    
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        
 </head>
     <body>
         <!-- Start Navigation -->
@@ -43,7 +45,7 @@
                             <a ui-sref="index">Home</a>
                         </li>
                         <li>
-                            <a ui-sref="post">Post</a>
+                            <a ui-sref="addPost" ng-if="isLoginedIn">Add Post</a>
                         </li>
                         <li>
                             <a ui-sref="about">About</a>
@@ -52,8 +54,8 @@
                             <a ui-sref="contact">Contact</a>
                         </li>
                         <li>
-                            <a ui-sref="login" ng-show="!isLoginedIn">Login</a>
-                            <a ui-sref="logout" ng-show="isLoginedIn">Logout</a>
+                            <a ui-sref="login" ng-if="!isLoginedIn">Login</a>
+                            <a ui-sref="logout" ng-if="isLoginedIn">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -76,6 +78,43 @@
         <!-- End Navigation -->
 
         <ui-view></ui-view>
+        <!-- Start Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted">Copyright &copy; {{appName}} 2014</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
     
         <!-- Start view related js files -->
         <!--Inject JQuery-->
@@ -101,12 +140,18 @@
         <script type="text/javascript" src="/app/scripts/controllers/mainCtrl.js"></script>
         <script type="text/javascript" src="/app/scripts/controllers/user/loginCtrl.js"></script>
         <script type="text/javascript" src="/app/scripts/controllers/user/logoutCtrl.js"></script>
+        <script type="text/javascript" src="/app/scripts/controllers/post/detail/detailPostCtrl.js"></script>
+        <script type="text/javascript" src="/app/scripts/controllers/post/add/addPostCtrl.js"></script>
+        <script type="text/javascript" src="/app/scripts/controllers/post/edit/editPostCtrl.js"></script>
 
         <!--Directives related-->
+        
+
         <!--Services related-->
         <script type="text/javascript" src="/app/scripts/services/servicesModule.js"></script>
         <script type="text/javascript" src="/app/scripts/services/logger.js"></script>
         <script type="text/javascript" src="/app/scripts/services/userService.js"></script>
+        <script type="text/javascript" src="/app/scripts/services/postService.js"></script>
         <!-- End AngularJS Related Js Files-->
     </body>
 </html>

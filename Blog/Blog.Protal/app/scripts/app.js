@@ -24,9 +24,29 @@
                 url: '/about',
                 templateUrl: '/app/views/about/about.html'
             })
-            .state('post', {
-                url: '/post',
-                templateUrl: '/app/views/post/post.html',
+            //Post detail
+            .state('detailPost', {
+                url: '/post/detail/:postId',
+                templateUrl: '/app/views/post/detail/detailPost.html',
+                controller: 'detailPostController',
+                controllerAs: 'vm',
+            })
+            //Add one post
+            .state('addPost', {
+                url: '/post/add',
+                templateUrl: '/app/views/post/add/addPost.html',
+                controller: 'addPostController',
+                controllerAs: 'vm',
+                data: {
+                    requireLogin: true
+                }
+            })
+            //Edit one post
+            .state('editPost', {
+                url: '/post/edit/:postId',
+                templateUrl: '/app/views/post/edit/editPost.html',
+                controller: 'editPostController',
+                controllerAs: 'vm',
                 data: {
                     requireLogin: true
                 }
@@ -51,24 +71,28 @@
     function routeChanged($cookies, $state, $rootScope, $location) {
         $rootScope.$on('$stateChangeStart', function (e, toState, toParams, fromState, fromParams) {
             var shouldLogin = toState.data !== undefined && toState.data.requireLogin;
-
             var loginUser = $cookies.get('loginUser');
             if (loginUser) {
                 //User logined in
                 $rootScope.isLoginedIn = true;
             } else {
-                if (shouldLogin) {
+                $rootScope.isLoginedIn = false;
+            }
+
+            if (shouldLogin === true) {
+                if (!loginUser) {
                     $state.go('login');
                     e.preventDefault();
+
+                    $rootScope.isLoginedIn = false;
                 }
-                
-                $rootScope.isLoginedIn = false;
             }
 
             return;   
         });
     }
 
-//Constants
-    app.constant("DEBUG", true);
+    //Constants
+    app.constant('DEBUG', true);
+    app.constant('APIURL', 'http://localhost:23751/api');
 })();

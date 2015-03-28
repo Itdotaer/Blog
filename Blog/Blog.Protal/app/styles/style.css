@@ -3,14 +3,6 @@
     padding: 40px 40px;
 }
 
-.btn {
-    font-weight: 700;
-    height: 36px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
-}
 
 /*
  * Card component
@@ -121,4 +113,8 @@
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(12, 97, 33);
+}
+
+.inputLinePadding {
+    padding-bottom: 20px;
 }
