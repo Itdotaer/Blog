@@ -1,0 +1,21 @@
+﻿<article>
+    <div class="container">
+        <div class="row">        
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <h2 class="post-title">
+                        {{vm.post.Title}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{vm.post.Description}}
+                    </h3>
+                    <p class="post-meta">Posted by <a href="#">{{vm.post.Users2.UserName}}</a> {{vm.post.PublishedDate}}</p>
+                </div>
+                {{vm.post.Content}}
+            </div>
+            <div ng-if="isLoginedIn">
+                <a class="btn btn-primary" ui-sref="editPost({postId: vm.post.Id})">Edit</a>
+            </div>
+        </div>
+    </div>
+</article>

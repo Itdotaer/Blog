@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aa75aed389d148fc824e175bc5d1cf17" Name="Diagram1">
+        <EntityTypeShape EntityType="Blog.DatabaseModel.C__RefactorLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blog.DatabaseModel.Comments" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blog.DatabaseModel.Posts" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blog.DatabaseModel.Users" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="Blog.DatabaseModel.FK_Comments_Posts" ManuallyRouted="false" />
+        <AssociationConnector Association="Blog.DatabaseModel.FK_Comments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Blog.DatabaseModel.FK_Posts_Users_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Blog.DatabaseModel.FK_Posts_Users_LastUpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Blog.DatabaseModel.FK_Posts_Users_Published" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
