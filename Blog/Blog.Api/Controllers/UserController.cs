@@ -1,7 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Security.Cryptography;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using Blog.Core.Common.Helpers;
 using Blog.Models;
 using View_Users = Blog.Api.Models.Users;
 
@@ -45,6 +48,17 @@ namespace Blog.Api.Controllers
         private bool UsersExists(string email)
         {
             return db.Users.Count(e => e.Email == email) > 0;
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetMd5Hash(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return Ok(new {result="fail", data="Md5 input is null"});
+            }
+
+            return Ok(new { result = "ok", data = MD5Encorpy.GetMd5Hash(input) });
         }
 
         protected override void Dispose(bool disposing)
