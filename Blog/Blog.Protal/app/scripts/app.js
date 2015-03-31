@@ -51,9 +51,12 @@
                     requireLogin: true
                 }
             })
+            //Send mail
             .state('contact', {
                 url: '/contact',
-                templateUrl: '/app/views/contact/contact.html'
+                templateUrl: '/app/views/contact/contact.html',
+                controller: 'sendMailController',
+                controllerAs: 'vm'
             })
             .state('login', {
                 url: '/login',
@@ -65,7 +68,7 @@
                 url: '/logout',
                 controller: 'logoutController',
                 controllerAs: 'vm'
-        });
+            });
     }
 
     function routeChanged($cookies, $state, $rootScope, $location) {

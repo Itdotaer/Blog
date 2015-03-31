@@ -14,11 +14,7 @@
             getMd5: getMd5
         };
 
-        function coreLogin(user) {
-            
-
-           
-        }
+        return service;
 
         function login(user) {
             var postUser =
@@ -95,7 +91,5 @@
                 return resp.data;
             });
         }
-
-        return service;
     }
 })();

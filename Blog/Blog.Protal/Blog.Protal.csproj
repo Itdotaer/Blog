@@ -57,12 +57,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\scripts\controllers\mail\sendMailCtrl.js" />
     <Content Include="app\scripts\controllers\post\add\addPostCtrl.js" />
     <Content Include="app\scripts\controllers\post\edit\editPostCtrl.js" />
     <Content Include="app\scripts\controllers\post\detail\detailPostCtrl.js" />
     <Content Include="app\scripts\controllers\user\logoutCtrl.js" />
     <Content Include="app\scripts\controllers\user\loginCtrl.js" />
     <Content Include="app\scripts\services\postService.js" />
+    <Content Include="app\scripts\services\mailService.js" />
     <Content Include="app\scripts\services\userService.js" />
     <Content Include="app\scripts\vendor\angularJS\angular-1.4.0-beta.6\angular-animate.js" />
     <Content Include="app\scripts\vendor\angularJS\angular-1.4.0-beta.6\angular-animate.min.js" />
