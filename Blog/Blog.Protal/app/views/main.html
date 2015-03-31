@@ -22,7 +22,7 @@
             <!-- Pager -->
             <ul class="pager">
                 <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
+                    <button class="btn nextPage" ng-click="vm.nextPage()" ng-disabled="vm.totalSize < (vm.pageIndex + 1)">Older Posts &rarr;</button>
                 </li>
             </ul>
         </div>

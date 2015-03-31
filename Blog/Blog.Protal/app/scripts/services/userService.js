@@ -10,7 +10,6 @@
     function userService($http, $cookies, logger, APIURL, DEBUG) {
         var service = {
             login: login,
-            coreLogin: coreLogin,
             getMd5: getMd5
         };
 

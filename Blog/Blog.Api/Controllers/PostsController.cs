@@ -16,9 +16,11 @@ namespace Blog.Api.Controllers
         private Entities db = new Entities();
 
         // GET api/Posts
-        public IQueryable<Posts> GetPosts()
+        public IHttpActionResult GetPosts(int pageSize, int pageIndex)
         {
-            return db.Posts;
+            var rsList =
+                db.Posts.Take(pageSize*pageIndex).OrderByDescending(t => t.PublishedDate).Skip(pageSize*(pageIndex - 1));
+            return Ok(new {totalSize = db.Posts.Count(), posts = rsList.ToList()});
         }
 
         // GET api/Posts/5

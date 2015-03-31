@@ -12,6 +12,7 @@
             addPost: addPost,
             getPostById: getPostById,
             getAllPosts: getAllPosts,
+            getPosts: getPosts,
             updatePost: updatePost,
             deletePostById: deletePostById
     };    
@@ -60,6 +61,16 @@
 
         function getAllPosts() {
             return $http.get(APIURL + '/Posts', {
+                headers: {
+                    'Content-Type':'application/json'
+                }
+            }).then(function(resp) {
+                return resp.data;
+            });
+        }
+
+        function getPosts(pageSize, pageIndex) {
+            return $http.get(APIURL + '/Posts/GetPosts?pageSize=' + pageSize + '&&pageIndex=' + pageIndex, {
                 headers: {
                     'Content-Type':'application/json'
                 }

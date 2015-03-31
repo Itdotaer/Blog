@@ -118,3 +118,7 @@
 .inputLinePadding {
     padding-bottom: 20px;
 }
+
+.next {
+    float: right;
+}

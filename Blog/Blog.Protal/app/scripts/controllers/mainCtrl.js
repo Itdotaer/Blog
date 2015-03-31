@@ -11,14 +11,18 @@
     function mainController(postService, logger, DEBUG) {
         var vm = this;
         vm.deletePostById = deletePostById;
+        vm.nextPage = nextPage;
 
         activate();
 
         function activate() {
             vm.posts = [];
+            vm.pageIndex = 1;
+            vm.pageSize = 10;
 
-            postService.getAllPosts().then(function(data) {
-                vm.posts = data;
+            postService.getPosts(vm.pageSize, vm.pageIndex).then(function (data) {
+                vm.posts = data.posts;
+                vm.totalSize = data.totalSize;
                 if (DEBUG) {
                     console.log(vm.posts);
                 }
@@ -39,6 +43,25 @@
                 });
             } else {
                 logger.logError('No post id.');
+            }
+        }
+
+        function nextPage() {
+            vm.pageIndex++;
+
+            if (vm.pageIndex <= vm.totalSize) {
+                vm.posts = [];
+
+                postService.getPosts(vm.pageSize, vm.pageIndex).then(function(data) {
+                    vm.posts = data.posts;
+                    if (DEBUG) {
+                        console.log(vm.posts);
+                    }
+                }, function(reason) {
+                    logger.logError('Get all posts error.');
+                });
+            } else {
+                logger.logError('PageIndex is the last.');
             }
         }
     }
