@@ -20,7 +20,7 @@ namespace Blog.Api.Controllers
         {
             var rsList =
                 db.Posts.Take(pageSize*pageIndex).OrderByDescending(t => t.PublishedDate).Skip(pageSize*(pageIndex - 1));
-            return Ok(new {totalSize = db.Posts.Count(), posts = rsList.ToList()});
+            return Ok(new { totalSize = Math.Ceiling((double)db.Posts.Count() / pageSize), posts = rsList.ToList() });
         }
 
         // GET api/Posts/5

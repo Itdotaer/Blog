@@ -12,6 +12,7 @@
         var vm = this;
         vm.deletePostById = deletePostById;
         vm.nextPage = nextPage;
+        vm.perious = perious;
 
         activate();
 
@@ -46,6 +47,25 @@
             }
         }
 
+        function perious() {
+            vm.pageIndex--;
+
+            if (vm.pageIndex >= 1) {
+                vm.posts = [];
+
+                postService.getPosts(vm.pageSize, vm.pageIndex).then(function (data) {
+                    vm.posts = data.posts;
+                    if (DEBUG) {
+                        console.log(vm.posts);
+                    }
+                }, function (reason) {
+                    logger.logError('Get posts error.');
+                });
+            } else {
+                logger.logError('PageIndex is the min.');
+            }
+        }
+
         function nextPage() {
             vm.pageIndex++;
 
@@ -58,7 +78,7 @@
                         console.log(vm.posts);
                     }
                 }, function(reason) {
-                    logger.logError('Get all posts error.');
+                    logger.logError('Get posts error.');
                 });
             } else {
                 logger.logError('PageIndex is the last.');

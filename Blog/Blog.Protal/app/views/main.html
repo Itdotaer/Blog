@@ -21,8 +21,11 @@
             
             <!-- Pager -->
             <ul class="pager">
+                <li class="previous">
+                    <button class="btn nextPage" ng-click="vm.perious()" ng-disabled="vm.pageIndex == 1">Newer Posts &rarr;</button>
+                </li>
                 <li class="next">
-                    <button class="btn nextPage" ng-click="vm.nextPage()" ng-disabled="vm.totalSize < (vm.pageIndex + 1)">Older Posts &rarr;</button>
+                    <button class="btn nextPage" ng-click="vm.nextPage()" ng-disabled="vm.totalSize == vm.pageIndex">Older Posts &rarr;</button>
                 </li>
             </ul>
         </div>
