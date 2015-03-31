@@ -4,7 +4,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div ng-repeat="post in vm.posts">
                 <div class="post-preview">
-                    <span class="glyphicon glyphicon-remove pull-right" ng-click="vm.deletePostById(post.Id)"></span>
+                    <span class="glyphicon glyphicon-remove pull-right" ng-if="isLoginedIn" ng-click="vm.deletePostById(post.Id)"></span>
                     <a ui-sref="detailPost({postId:post.Id})">
                         <h2 class="post-title">
                             {{post.Title}}
