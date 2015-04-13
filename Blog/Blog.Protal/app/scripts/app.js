@@ -1,7 +1,7 @@
 ﻿(function() {
     'use sctrict';
 
-    var app = angular.module('app', ['ui.router', 'ngCookies', 'angular-md5', 'services']);
+    var app = angular.module('app', ['ui.router', 'ngCookies', 'angular-md5', 'services','blog.gallery']);
 
     router.$inject = ['$stateProvider', '$urlRouterProvider'];
     routeChanged.$inject = ['$cookies', '$state', '$rootScope', '$location'];
@@ -97,5 +97,5 @@
 
     //Constants
     app.constant('DEBUG', true);
-    app.constant('APIURL', 'http://localhost:23751/api');
+    app.constant('APIURL', 'http://localhost:8081/api');
 })();

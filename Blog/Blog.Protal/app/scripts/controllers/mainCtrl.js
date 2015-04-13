@@ -32,11 +32,10 @@
             });
         }
 
-        function deletePostById(postId) {
+        function deletePostById(idx, postId) {
             if (postId) {
                 postService.deletePostById(postId).then(function(data) {
-                    var idx = vm.posts.indexOf(postId);
-                    if (idx) {
+                    if (idx > -1) {
                         vm.posts.splice(idx, 1);
                     }
                 }, function(reason) {
@@ -45,6 +44,16 @@
             } else {
                 logger.logError('No post id.');
             }
+        }
+
+        function findPostIndex(postId) {
+            vm.posts.forEach(function(post, index) {
+                if (postId == post.Id) {
+                    return index;
+                }
+            });
+
+            return -1;
         }
 
         function perious() {

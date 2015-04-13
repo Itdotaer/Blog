@@ -57,14 +57,37 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\images\1920\blue.jpg" />
+    <Content Include="app\images\1920\purple.jpg" />
+    <Content Include="app\images\1920\red.jpg" />
+    <Content Include="app\images\a21.png" />
+    <Content Include="app\images\b21.png" />
+    <Content Include="app\images\loading.gif" />
+    <Content Include="app\images\new-site\c-finger-pointing.png" />
+    <Content Include="app\images\new-site\c-fruit.png" />
+    <Content Include="app\images\new-site\c-jssor-slider.png" />
+    <Content Include="app\images\new-site\c-navigator-horizontal.png" />
+    <Content Include="app\images\new-site\c-navigator.png" />
+    <Content Include="app\images\new-site\c-phone-horizontal.png" />
+    <Content Include="app\images\new-site\c-phone.png" />
+    <Content Include="app\images\new-site\c-slide-1.jpg" />
+    <Content Include="app\images\new-site\c-slide-2.jpg" />
+    <Content Include="app\images\new-site\c-slide-3.jpg" />
+    <Content Include="app\images\new-site\c-text.png" />
+    <Content Include="app\images\new-site\cool-guy.png" />
     <Content Include="app\scripts\controllers\mail\sendMailCtrl.js" />
     <Content Include="app\scripts\controllers\post\add\addPostCtrl.js" />
     <Content Include="app\scripts\controllers\post\edit\editPostCtrl.js" />
     <Content Include="app\scripts\controllers\post\detail\detailPostCtrl.js" />
     <Content Include="app\scripts\controllers\user\logoutCtrl.js" />
     <Content Include="app\scripts\controllers\user\loginCtrl.js" />
+    <Content Include="app\scripts\directives\gallery\galleryDirective.js" />
+    <Content Include="app\scripts\directives\gallery\galleryModule.js" />
+    <Content Include="app\scripts\directives\gallery\galleryCtrl.js" />
+    <Content Include="app\scripts\directives\gallery\gallery.html" />
     <Content Include="app\scripts\services\postService.js" />
     <Content Include="app\scripts\services\mailService.js" />
+    <Content Include="app\scripts\services\galleryService.js" />
     <Content Include="app\scripts\services\userService.js" />
     <Content Include="app\scripts\vendor\angularJS\angular-1.4.0-beta.6\angular-animate.js" />
     <Content Include="app\scripts\vendor\angularJS\angular-1.4.0-beta.6\angular-animate.min.js" />
@@ -99,6 +122,15 @@
     <Content Include="app\scripts\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="app\scripts\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="app\scripts\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\scripts\vendor\jQuery\jquery-1.9.1.min.js" />
+    <Content Include="app\scripts\vendor\slider\jquery-1.9.1.min.js" />
+    <Content Include="app\scripts\vendor\slider\jssor.js" />
+    <Content Include="app\scripts\vendor\slider\jssor.player.ytiframe.js" />
+    <Content Include="app\scripts\vendor\slider\jssor.player.ytiframe.min.js" />
+    <Content Include="app\scripts\vendor\slider\jssor.slider.debug.min.js" />
+    <Content Include="app\scripts\vendor\slider\jssor.slider.js" />
+    <Content Include="app\scripts\vendor\slider\jssor.slider.min.js" />
+    <Content Include="app\scripts\vendor\slider\jssor.slider.mini.js" />
     <Content Include="app\styles\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="app\styles\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="app\styles\fonts\glyphicons-halflings-regular.woff" />
@@ -119,6 +151,11 @@
     <Content Include="app\scripts\vendor\angularJS\angular-1.4.0-beta.6\angular.min.js.map" />
     <Content Include="app\scripts\vendor\angularJS\angular-1.4.0-beta.6\errors.json" />
     <Content Include="app\scripts\vendor\angularJS\angular-1.4.0-beta.6\version.json" />
+    <Content Include="app\scripts\vendor\slider\jssor.player.ytiframe.compress.bat" />
+    <Content Include="app\scripts\vendor\slider\jssor.slider.debug.min.compress.bat" />
+    <Content Include="app\scripts\vendor\slider\jssor.slider.min.compress.bat" />
+    <Content Include="app\scripts\vendor\slider\jssor.slider.mini.compress.bat" />
+    <None Include="Properties\PublishProfiles\blog_protal.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,6 +184,7 @@
     <Content Include="app\scripts\vendor\bootstrap\js\bootstrap.min.js" />
     <Content Include="app\scripts\vendor\bootstrap\js\npm.js" />
     <Content Include="app\scripts\vendor\jQuery\jquery-1.11.2.min.js" />
+    <Content Include="app\styles\jssor-slider.css" />
     <Content Include="app\styles\style.css" />
     <Content Include="app\styles\clean-blog.css" />
     <Content Include="app\styles\clean-blog.min.css" />
@@ -166,7 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\scripts\controllers\comment\" />
-    <Folder Include="app\scripts\directives\" />
     <Folder Include="app\scripts\filters\" />
     <Folder Include="app\scripts\vendor\blog\" />
   </ItemGroup>

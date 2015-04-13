@@ -11,6 +11,7 @@
     function editPostController($cookies, $state, $stateParams, logger, postService, DEBUG) {
         var vm = this;
         vm.updatePost = updatePost;
+        vm.cancel = cancel;
 
         activate();
 
@@ -53,6 +54,10 @@
                 logger.logError("User should be login.");
                 $state.go('login');
             }         
+        }
+
+        function cancel(postId) {
+            $state.go('detailPost', {postId: postId});
         }
     }
 })();

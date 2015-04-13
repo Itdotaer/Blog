@@ -11,6 +11,7 @@
     function addPostController($cookies, $state, logger, postService, DEBUG) {
         var vm = this;
         vm.addPost = addPost;
+        vm.cancel = cancel;
 
         activate();
 
@@ -35,6 +36,10 @@
                 logger.logError('User should be login.');
                 $state.go('login');
             }
+        }
+
+        function cancel() {
+            $state.go('index');
         }
     }
 })();

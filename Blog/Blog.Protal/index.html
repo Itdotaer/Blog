@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" />
     <link rel="stylesheet" type="text/css" href="/app/styles/clean-blog.css"/>
     <link rel="stylesheet" type="text/css" href="/app/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="/app/styles/jssor-slider.css" />
     
     <!-- Custom Fonts -->
     
@@ -60,24 +61,8 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-        <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('/app/images/home-bg.jpg')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <div class="site-heading">
-                            <h1>Harry's Blog</h1>
-                            <hr class="small">
-                            <span class="subheading">A blog that share everything of mine.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- End Navigation -->
-
-        <ui-view></ui-view>
+        </nav>     
+        <div ui-view style="margin-top: 60px;"></div>
         <!-- Start Footer -->
         <footer>
             <div class="container">
@@ -118,7 +103,7 @@
     
         <!-- Start view related js files -->
         <!--Inject JQuery-->
-        <script type="text/javascript" src="/app/scripts/vendor/jQuery/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="/app/scripts/vendor/jQuery/jquery-1.9.1.min.js"></script>
 
         <!--Bootscript related js files-->
         <script type="text/javascript" src="/app/scripts/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -146,7 +131,9 @@
         <script type="text/javascript" src="/app/scripts/controllers/mail/sendMailCtrl.js"></script>
 
         <!--Directives related-->
-        
+        <script type="text/javascript" src="/app/scripts/directives/gallery/galleryModule.js"></script>
+        <script type="text/javascript" src="/app/scripts/directives/gallery/galleryCtrl.js"></script>
+        <script type="text/javascript" src="/app/scripts/directives/gallery/galleryDirective.js"></script>       
 
         <!--Services related-->
         <script type="text/javascript" src="/app/scripts/services/servicesModule.js"></script>
@@ -154,6 +141,8 @@
         <script type="text/javascript" src="/app/scripts/services/userService.js"></script>
         <script type="text/javascript" src="/app/scripts/services/postService.js"></script>
         <script type="text/javascript" src="/app/scripts/services/mailService.js"></script>
+        <script type="text/javascript" src="/app/scripts/services/galleryService.js"></script>
+
         <!-- End AngularJS Related Js Files-->
     </body>
 </html>
